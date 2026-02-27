@@ -28,7 +28,7 @@ function App() {
         <Container>
           <nav className="flex items-center justify-between h-16">
             <a href="#" className="text-lg font-semibold">
-              Micro-SaaS Platform
+              Micro-SaaS
             </a>
             <div className="flex items-center gap-6">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground">
@@ -48,7 +48,7 @@ function App() {
         <section className="relative overflow-hidden pb-4 pt-2 sm:pb-6">
           <Container>
             <div className="pointer-events-none absolute inset-0 opacity-70">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-10" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-40" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,theme(colors.primary)/10,transparent_62%),radial-gradient(circle_at_82%_52%,theme(colors.chart-2)/8,transparent_68%)]" />
             </div>
 
