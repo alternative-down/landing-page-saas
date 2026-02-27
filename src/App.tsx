@@ -15,14 +15,19 @@ import {
 } from '@/components/home-sections'
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="max-w-full px-4 sm:px-6 lg:px-8">
+  <div className="w-full px-6 sm:px-8 lg:px-12">
     {children}
   </div>
 )
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-dvh overflow-x-hidden bg-[radial-gradient(circle_at_20%_0%,theme(colors.primary)/5,transparent_55%),linear-gradient(to_bottom,theme(colors.muted)/22,theme(colors.background),theme(colors.background))]">
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,transparent_0%,oklch(0_0_0/0.18)_100%),repeating-linear-gradient(45deg,var(--border)_0_1px,transparent_1px_14px)] dark:bg-[linear-gradient(to_bottom,transparent_0%,oklch(0_0_0/0.72)_100%),repeating-linear-gradient(45deg,var(--border)_0_1px,transparent_1px_14px)]"
+      />
+      <div className="relative">
       {/* Header */}
       <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-40">
         <Container>
@@ -343,6 +348,7 @@ function App() {
           </div>
         </Container>
       </footer>
+      </div>
     </div>
   )
 }
