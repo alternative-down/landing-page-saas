@@ -22,7 +22,7 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 
 function App() {
   return (
-    <div className="min-h-screen bg-background dark:bg-background">
+    <div className="min-h-screen">
       {/* Header */}
       <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-40">
         <Container>
@@ -44,11 +44,11 @@ function App() {
       </header>
 
       <main>
-        {/* Hero Section - EXACT MATCH to portal */}
+        {/* Hero Section - EXACT COPY from portal */}
         <section className="relative overflow-hidden pb-4 pt-2 sm:pb-6">
           <Container>
             <div className="pointer-events-none absolute inset-0 opacity-70">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-40" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-10" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,theme(colors.primary)/10,transparent_62%),radial-gradient(circle_at_82%_52%,theme(colors.chart-2)/8,transparent_68%)]" />
             </div>
 
@@ -205,7 +205,9 @@ function App() {
               <SectionTitle>
                 <SectionTitleMain>
                   <SectionTitleKicker>Preços</SectionTitleKicker>
-                  <SectionTitleHeading>Simplicidade em cada plano</SectionTitleHeading>
+                  <SectionTitleHeading>
+                    Simplicidade em cada plano
+                  </SectionTitleHeading>
                   <SectionTitleDescription>
                     Escolha o plano ideal para você, sem surpresas.
                   </SectionTitleDescription>
@@ -261,7 +263,9 @@ function App() {
               <SectionTitle>
                 <SectionTitleMain>
                   <SectionTitleKicker>Comunidade</SectionTitleKicker>
-                  <SectionTitleHeading>Ideias & Feedback</SectionTitleHeading>
+                  <SectionTitleHeading>
+                    Ideias & Feedback
+                  </SectionTitleHeading>
                   <SectionTitleDescription>
                     O que a comunidade está pedindo e o que vem a seguir.
                   </SectionTitleDescription>
