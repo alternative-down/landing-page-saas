@@ -6,13 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "serve -s dist -l 3000"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
-    "serve": "^14.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
