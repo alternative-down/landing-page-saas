@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight, Flame, Lightbulb } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { 
   Panel, 
   SectionTitle, 
@@ -42,6 +43,7 @@ function App() {
               <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground">
                 Pricing
               </a>
+              <ThemeToggle />
               <Button>Começar</Button>
             </div>
           </nav>
