@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { ArrowUpRight, Zap, Lock, BarChart3, Gauge, Flame, Lightbulb } from 'lucide-react'
+import { ArrowUpRight, Flame, Lightbulb } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
 import { 
   Panel, 
@@ -11,40 +11,40 @@ import {
   SectionTitleActions,
   SectionTitleLink,
   SplitKicker,
-  StatusChip 
+  StatusChip
 } from '@/components/home-sections'
 
 const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="max-w-full px-4 sm:px-6 lg:px-8">
     {children}
   </div>
 )
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+      <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-40">
         <Container>
-          <nav className="h-16 flex items-center justify-between">
-            <a href="#home" className="text-xl font-semibold">
+          <nav className="flex items-center justify-between h-16">
+            <a href="#" className="text-lg font-semibold">
               Micro-SaaS
             </a>
-            <div className="flex gap-6 items-center">
+            <div className="flex items-center gap-6">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground">
                 Features
               </a>
               <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground">
                 Pricing
               </a>
-              <Button>Get Started</Button>
+              <Button>Começar</Button>
             </div>
           </nav>
         </Container>
       </header>
 
-      <main className="flex-1">
-        {/* Hero */}
+      <main>
+        {/* Hero Section - EXACT MATCH to portal */}
         <section className="relative overflow-hidden pb-4 pt-2 sm:pb-6">
           <Container>
             <div className="pointer-events-none absolute inset-0 opacity-70">
@@ -61,7 +61,7 @@ function App() {
 
                   <div className="mt-6 space-y-6 text-center">
                     <h1 className="text-balance text-6xl leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl">
-                      Construa seu<br/>
+                      Construa seu
                       <span className="block text-muted-foreground">
                         SaaS mais rápido
                       </span>
@@ -70,88 +70,56 @@ function App() {
                     <p className="mx-auto max-w-[92ch] text-pretty text-base text-muted-foreground sm:text-lg">
                       Tudo que você precisa para lançar um produto SaaS moderno. Construído com TypeScript, React e as melhores práticas da indústria.
                     </p>
-
-                    <div className="flex gap-3 justify-center flex-wrap pt-4">
-                      <Button size="lg">
-                        Começar <ArrowUpRight className="ml-2 h-4 w-4" />
-                      </Button>
-                      <Button size="lg" variant="outline">
-                        Saber mais
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Featured showcase */}
+              {/* Featured showcase - THREE PANELS */}
               <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-stretch">
-                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
-                  <div className="space-y-4 flex-1 flex flex-col">
+                <Panel className="p-5 sm:p-6 lg:w-1/3">
+                  <div className="space-y-2 text-center">
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                      Stack
+                      Build Tool
                     </p>
-                    <div className="space-y-3 flex-1">
-                      {[
-                        { label: 'Vite', value: '7.3.1' },
-                        { label: 'React', value: '19.2.4' },
-                        { label: 'TypeScript', value: '5.9.3' }
-                      ].map((item) => (
-                        <div key={item.label} className="flex items-center justify-between gap-4 pb-3 border-b border-border/40 last:border-b-0 last:pb-0">
-                          <span className="text-sm text-muted-foreground">{item.label}</span>
-                          <span className="font-semibold">{item.value}</span>
-                        </div>
-                      ))}
-                    </div>
+                    <p className="text-3xl font-bold">Vite 7.3.1</p>
+                    <p className="text-sm text-muted-foreground">Ultra-rápido com HMR instant</p>
                   </div>
                 </Panel>
 
-                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
-                  <div className="space-y-4 flex-1 flex flex-col">
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                        Features
-                      </p>
-                      <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
-                        Moderno
-                      </p>
-                    </div>
-                    <div className="space-y-2 flex-1">
-                      {[
-                        'Build tool ultra-rápido',
-                        'UI library moderno',
-                        'Type safety total'
-                      ].map((feature) => (
-                        <div key={feature} className="flex items-start gap-2 text-sm">
-                          <span className="text-primary">✓</span>
-                          <span className="text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                <Panel className="p-5 sm:p-6 lg:w-1/3">
+                  <div className="space-y-2 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                      UI Library
+                    </p>
+                    <p className="text-3xl font-bold">React 19.2</p>
+                    <p className="text-sm text-muted-foreground">Com concurrent features</p>
                   </div>
                 </Panel>
 
-                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
-                  <div className="space-y-4 flex-1 flex flex-col">
+                <Panel className="p-5 sm:p-6 lg:w-1/3">
+                  <div className="space-y-2 text-center">
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                      Pronto
+                      Type Safety
                     </p>
-                    <div className="space-y-3 flex-1 flex flex-col justify-center">
-                      <div className="space-y-1">
-                        <p className="text-2xl font-bold">3</p>
-                        <p className="text-sm text-muted-foreground">Ferramentas principais</p>
-                      </div>
-                      <div className="pt-2 border-t border-border/40">
-                        <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mt-2">Provenientes</p>
-                      </div>
-                    </div>
+                    <p className="text-3xl font-bold">TypeScript 5.9</p>
+                    <p className="text-sm text-muted-foreground">Zero runtime type errors</p>
                   </div>
                 </Panel>
+              </div>
+
+              <div className="mt-6 flex gap-3 justify-center flex-wrap">
+                <Button size="lg">
+                  Começar <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline">
+                  Saber mais
+                </Button>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Features */}
+        {/* Features Section */}
         <section id="features" className="py-6 sm:py-8">
           <Container>
             <div className="space-y-6">
@@ -159,43 +127,35 @@ function App() {
                 <SectionTitleMain>
                   <SectionTitleKicker>Capacidades</SectionTitleKicker>
                   <SectionTitleHeading>
-                    Recursos poderosos
+                    Recursos poderosos para seu SaaS
                   </SectionTitleHeading>
                   <SectionTitleDescription>
-                    Tudo que você precisa para construir e escalar seu produto com confiança.
+                    Tudo que você precisa para construir e escalar seu produto.
                   </SectionTitleDescription>
                 </SectionTitleMain>
               </SectionTitle>
 
               <Separator className="opacity-40" />
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { icon: Zap, title: 'Ultra rápido', desc: 'Vite garante builds em milissegundos.' },
-                  { icon: Lock, title: 'Seguro por padrão', desc: 'Autenticação e boas práticas embutidas.' },
-                  { icon: BarChart3, title: 'Analytics', desc: 'Métricas e insights do usuário.' },
-                  { icon: Gauge, title: 'Escalável', desc: 'De MVP a milhões de usuários.' }
-                ].map((feature) => {
-                  const Icon = feature.icon
-                  return (
-                    <Panel key={feature.title} tone="portfolio" className="p-6 flex flex-col">
-                      <Icon className="h-8 w-8 mb-4 text-primary" />
-                      <h3 className="font-semibold mb-2 text-base">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground flex-1">
-                        {feature.desc}
-                      </p>
-                    </Panel>
-                  )
-                })}
+                  { title: 'Ultra rápido', desc: 'Vite garante builds em milissegundos.' },
+                  { title: 'Seguro', desc: 'Autenticação e boas práticas embutidas.' },
+                  { title: 'Escalável', desc: 'De MVP a milhões de usuários.' },
+                  { title: 'Type-Safe', desc: 'Zero erros de tipo em runtime.' }
+                ].map((item) => (
+                  <Panel key={item.title} tone="portfolio" className="p-6 flex flex-col">
+                    <h3 className="font-semibold mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </Panel>
+                ))}
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Spotlight - Tech Stack */}
-        <section className="pt-2 pb-6 sm:pt-3 sm:pb-8">
+        {/* Tech Stack Section */}
+        <section className="py-6 sm:py-8">
           <Container>
             <div className="space-y-6">
               <SectionTitle>
@@ -227,10 +187,10 @@ function App() {
                 ].map((tech) => (
                   <Panel key={tech.name} tone="community" className="p-6 flex flex-col">
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="font-semibold text-base flex-1">{tech.name}</h3>
+                      <h3 className="font-semibold text-base">{tech.name}</h3>
                       <StatusChip status={tech.status as any} />
                     </div>
-                    <p className="text-sm text-muted-foreground flex-1">{tech.desc}</p>
+                    <p className="text-sm text-muted-foreground">{tech.desc}</p>
                   </Panel>
                 ))}
               </div>
@@ -238,16 +198,14 @@ function App() {
           </Container>
         </section>
 
-        {/* Pricing */}
+        {/* Pricing Section */}
         <section id="pricing" className="py-6 sm:py-8">
           <Container>
             <div className="space-y-6">
               <SectionTitle>
                 <SectionTitleMain>
                   <SectionTitleKicker>Preços</SectionTitleKicker>
-                  <SectionTitleHeading>
-                    Simplicidade em cada plano
-                  </SectionTitleHeading>
+                  <SectionTitleHeading>Simplicidade em cada plano</SectionTitleHeading>
                   <SectionTitleDescription>
                     Escolha o plano ideal para você, sem surpresas.
                   </SectionTitleDescription>
@@ -256,7 +214,7 @@ function App() {
 
               <Separator className="opacity-40" />
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid gap-6 md:grid-cols-3">
                 {[
                   { name: 'Starter', price: '$29', status: 'proposed', features: ['Até 1.000 usuários', 'Recursos principais', 'Suporte por email'] },
                   { name: 'Professional', price: '$99', status: 'in_progress', featured: true, features: ['Até 10.000 usuários', 'Todos recursos Starter', 'Suporte prioritário', 'Analytics avançado'] },
@@ -268,19 +226,13 @@ function App() {
                     className={`p-6 sm:p-8 flex flex-col ${plan.featured ? 'ring-2 ring-primary' : ''}`}
                   >
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="text-2xl font-semibold">
-                        {plan.name}
-                      </h3>
+                      <h3 className="text-2xl font-semibold">{plan.name}</h3>
                       <StatusChip status={plan.status as any} />
                     </div>
 
                     <div className="mb-6">
-                      <span className="text-4xl font-bold">
-                        {plan.price}
-                      </span>
-                      {plan.price !== 'Custom' && (
-                        <span className="text-muted-foreground">/mês</span>
-                      )}
+                      <span className="text-4xl font-bold">{plan.price}</span>
+                      {plan.price !== 'Custom' && <span className="text-muted-foreground">/mês</span>}
                     </div>
 
                     <Button className="w-full mb-6" variant={plan.featured ? "default" : "secondary"}>
@@ -290,7 +242,7 @@ function App() {
                     <ul className="space-y-3 flex-1">
                       {plan.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-2 text-sm">
-                          <span className="mt-1.5 text-primary">✓</span>
+                          <span className="mt-1 text-primary">✓</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -302,24 +254,20 @@ function App() {
           </Container>
         </section>
 
-        {/* Ideas / Community */}
+        {/* Ideas / Community Section */}
         <section className="py-6 sm:py-8">
           <Container>
             <div className="space-y-6">
               <SectionTitle>
                 <SectionTitleMain>
                   <SectionTitleKicker>Comunidade</SectionTitleKicker>
-                  <SectionTitleHeading>
-                    Ideias & Feedback
-                  </SectionTitleHeading>
+                  <SectionTitleHeading>Ideias & Feedback</SectionTitleHeading>
                   <SectionTitleDescription>
                     O que a comunidade está pedindo e o que vem a seguir.
                   </SectionTitleDescription>
                 </SectionTitleMain>
                 <SectionTitleActions>
-                  <SectionTitleLink href="/roadmap">
-                    Ver roadmap
-                  </SectionTitleLink>
+                  <SectionTitleLink href="/roadmap">Ver roadmap</SectionTitleLink>
                 </SectionTitleActions>
               </SectionTitle>
 
@@ -327,31 +275,28 @@ function App() {
 
               <div className="grid gap-6 sm:grid-cols-2">
                 {[
-                  { icon: Lightbulb, title: 'OAuth Integration', votes: 234, status: 'planned' },
-                  { icon: Lightbulb, title: 'Dark Mode Support', votes: 189, status: 'in_progress' }
-                ].map((idea) => {
-                  const Icon = idea.icon
-                  return (
-                    <Panel key={idea.title} tone="community" className="p-6 flex flex-col">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div className="flex items-start gap-3 flex-1">
-                          <Icon className="h-5 w-5 text-primary mt-1" />
-                          <div className="min-w-0 flex-1">
-                            <h3 className="font-semibold">{idea.title}</h3>
-                            <p className="text-sm text-muted-foreground">{idea.votes} votes</p>
-                          </div>
+                  { title: 'OAuth Integration', votes: 234, status: 'planned' },
+                  { title: 'Dark Mode Support', votes: 189, status: 'in_progress' }
+                ].map((idea) => (
+                  <Panel key={idea.title} tone="community" className="p-6 flex flex-col">
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <div className="flex items-start gap-3 flex-1">
+                        <Lightbulb className="h-5 w-5 text-primary mt-1" />
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-semibold">{idea.title}</h3>
+                          <p className="text-sm text-muted-foreground">{idea.votes} votes</p>
                         </div>
-                        <StatusChip status={idea.status as any} />
                       </div>
-                    </Panel>
-                  )
-                })}
+                      <StatusChip status={idea.status as any} />
+                    </div>
+                  </Panel>
+                ))}
               </div>
             </div>
           </Container>
         </section>
 
-        {/* CTA */}
+        {/* CTA Section */}
         <section className="py-12 sm:py-16">
           <Container>
             <Panel tone="portfolio" className="p-8 sm:p-12 md:p-16">
