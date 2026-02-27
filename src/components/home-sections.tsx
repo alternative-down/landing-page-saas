@@ -82,6 +82,24 @@ export function SectionTitleDescription({ children }: { children: React.ReactNod
   )
 }
 
+export function SectionTitleActions({ children }: { children: React.ReactNode }) {
+  return <div className="flex items-center gap-4">{children}</div>
+}
+
+export function SectionTitleLink({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <a href={href} className="text-sm underline underline-offset-4 hover:text-foreground">
+      {children}
+    </a>
+  )
+}
+
 type ProjectStatus = "proposed" | "planned" | "in_progress" | "done"
 
 const statusLabels: Record<ProjectStatus, string> = {
