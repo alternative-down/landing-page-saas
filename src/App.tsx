@@ -1,162 +1,226 @@
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { ArrowRight, Zap, Lock, BarChart3, Gauge } from 'lucide-react'
+import { ArrowUpRight, Zap, Lock, BarChart3, Gauge } from 'lucide-react'
+import { 
+  Panel, 
+  SectionTitle, 
+  SectionTitleKicker, 
+  SectionTitleMain, 
+  SectionTitleHeading, 
+  SectionTitleDescription, 
+  SplitKicker,
+  StatusChip 
+} from '@/components/home-sections'
+
+const Container = ({ children }: { children: React.ReactNode }) => (
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {children}
+  </div>
+)
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="border-b border-slate-200 dark:border-slate-800 sticky top-0 bg-white dark:bg-slate-950 z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-slate-900 dark:text-white">
-            Micro-SaaS
-          </a>
-          <div className="flex gap-6 items-center">
-            <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
-              Features
-            </a>
-            <a href="#pricing" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
-              Pricing
-            </a>
-            <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
-              Contact
-            </a>
-            <Button>Get Started</Button>
-          </div>
+      <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+        <nav className="h-16 flex items-center justify-between">
+          <Container>
+            <div className="flex items-center justify-between w-full">
+              <a href="#home" className="text-xl font-semibold">
+                Micro-SaaS
+              </a>
+              <div className="flex gap-6 items-center">
+                <a href="#features" className="text-sm text-muted-foreground hover:text-foreground">
+                  Features
+                </a>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground">
+                  Pricing
+                </a>
+                <Button>Get Started</Button>
+              </div>
+            </div>
+          </Container>
         </nav>
       </header>
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-          <div className="text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">
-              Build your <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">SaaS</span> faster
-            </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-              Everything you need to launch a modern SaaS product. Built with TypeScript, React, and best practices.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button size="lg">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Learn More
-              </Button>
+        <section className="relative overflow-hidden pt-12 pb-8 sm:pt-16 sm:pb-12">
+          <Container>
+            <div className="pointer-events-none absolute inset-0 opacity-70">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-10" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,theme(colors.primary)/10,transparent_62%),radial-gradient(circle_at_82%_52%,theme(colors.chart-2)/8,transparent_68%)]" />
             </div>
-          </div>
+
+            <div className="relative text-center space-y-8">
+              <div className="space-y-6">
+                <SplitKicker left="Produto" right="Moderno" />
+                
+                <h1 className="text-balance text-6xl sm:text-7xl lg:text-8xl font-bold leading-[0.88] tracking-tight">
+                  Construa seu<br/>
+                  <span className="text-muted-foreground">SaaS mais rápido</span>
+                </h1>
+
+                <p className="mx-auto max-w-[92ch] text-pretty text-base text-muted-foreground sm:text-lg">
+                  Tudo que você precisa para lançar um produto SaaS moderno. Construído com TypeScript, React e as melhores práticas da indústria.
+                </p>
+              </div>
+
+              <div className="flex gap-3 justify-center flex-wrap">
+                <Button size="lg">
+                  Começar <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="lg">
+                  Saber mais
+                </Button>
+              </div>
+            </div>
+          </Container>
         </section>
 
         {/* Features */}
-        <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Powerful Features
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300">
-              Everything you need to build and scale your SaaS
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Zap, title: 'Lightning Fast', desc: 'Built with Vite and optimized for performance.' },
-              { icon: Lock, title: 'Secure by Default', desc: 'Authentication and best security practices built-in.' },
-              { icon: BarChart3, title: 'Analytics Ready', desc: 'Track user behavior and metrics.' },
-              { icon: Gauge, title: 'Scalable', desc: 'Built to scale from MVP to millions.' }
-            ].map((feature) => {
-              const Icon = feature.icon
-              return (
-                <Card key={feature.title} className="p-6">
-                  <Icon className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    {feature.desc}
-                  </p>
-                </Card>
-              )
-            })}
-          </div>
+        <section id="features" className="py-12 sm:py-16">
+          <Container>
+            <div className="space-y-12">
+              <SectionTitle>
+                <SectionTitleMain>
+                  <SectionTitleKicker>Capacidades</SectionTitleKicker>
+                  <SectionTitleHeading>
+                    Recursos poderosos para seu SaaS
+                  </SectionTitleHeading>
+                  <SectionTitleDescription>
+                    Tudo que você precisa para construir e escalar seu produto com confiança.
+                  </SectionTitleDescription>
+                </SectionTitleMain>
+              </SectionTitle>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { icon: Zap, title: 'Ultra rápido', desc: 'Construído com Vite para performance máxima.' },
+                  { icon: Lock, title: 'Seguro por padrão', desc: 'Autenticação e boas práticas de segurança.' },
+                  { icon: BarChart3, title: 'Analytics', desc: 'Acompanhe o comportamento e métricas dos usuários.' },
+                  { icon: Gauge, title: 'Escalável', desc: 'Pronto para escalar de MVP para milhões.' }
+                ].map((feature) => {
+                  const Icon = feature.icon
+                  return (
+                    <Panel key={feature.title} tone="portfolio" className="p-6 flex flex-col">
+                      <Icon className="h-6 w-6 mb-4" />
+                      <h3 className="font-semibold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {feature.desc}
+                      </p>
+                    </Panel>
+                  )
+                })}
+              </div>
+            </div>
+          </Container>
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Simple Pricing
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300">
-              Choose the plan that's right for you
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name: 'Starter', price: '$29', features: ['Up to 1,000 users', 'Core features', 'Email support'] },
-              { name: 'Professional', price: '$99', featured: true, features: ['Up to 10,000 users', 'All starter features', 'Priority support', 'Advanced analytics'] },
-              { name: 'Enterprise', price: 'Custom', features: ['Unlimited users', 'All features', '24/7 support', 'Dedicated manager'] }
-            ].map((plan) => (
-              <Card 
-                key={plan.name}
-                className={`p-8 ${plan.featured ? 'border-blue-600 dark:border-blue-400 ring-2 ring-blue-600 dark:ring-blue-400' : ''}`}
-              >
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                  {plan.name}
-                </h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-slate-900 dark:text-white">
-                    {plan.price}
-                  </span>
-                  {plan.price !== 'Custom' && (
-                    <span className="text-slate-600 dark:text-slate-300">/month</span>
-                  )}
-                </div>
-                <Button className="w-full mb-6" variant={plan.featured ? "default" : "outline"}>
-                  Get Started
-                </Button>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-slate-600 dark:text-slate-300">
-                      <span className="mr-2">✓</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
+        <section id="pricing" className="py-12 sm:py-16">
+          <Container>
+            <div className="space-y-12">
+              <SectionTitle>
+                <SectionTitleMain>
+                  <SectionTitleKicker>Preços</SectionTitleKicker>
+                  <SectionTitleHeading>
+                    Simplicidade em cada plano
+                  </SectionTitleHeading>
+                  <SectionTitleDescription>
+                    Escolha o plano ideal para você, sem surpresas.
+                  </SectionTitleDescription>
+                </SectionTitleMain>
+              </SectionTitle>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { name: 'Starter', price: '$29', status: 'proposed', features: ['Até 1.000 usuários', 'Recursos principais', 'Suporte por email'] },
+                  { name: 'Professional', price: '$99', status: 'in_progress', featured: true, features: ['Até 10.000 usuários', 'Todos recursos Starter', 'Suporte prioritário', 'Analytics avançado'] },
+                  { name: 'Enterprise', price: 'Custom', status: 'planned', features: ['Usuários ilimitados', 'Todos os recursos', 'Suporte 24/7', 'Account manager'] }
+                ].map((plan) => (
+                  <Panel
+                    key={plan.name}
+                    tone={plan.featured ? 'portfolio' : 'community'}
+                    className={`p-6 sm:p-8 flex flex-col ${plan.featured ? 'ring-2 ring-primary' : ''}`}
+                  >
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="min-w-0">
+                        <h3 className="text-2xl font-semibold">
+                          {plan.name}
+                        </h3>
+                      </div>
+                      <StatusChip status={plan.status as any} />
+                    </div>
+
+                    <div className="mb-6">
+                      <span className="text-4xl font-bold">
+                        {plan.price}
+                      </span>
+                      {plan.price !== 'Custom' && (
+                        <span className="text-muted-foreground">/mês</span>
+                      )}
+                    </div>
+
+                    <Button className="w-full mb-6" variant={plan.featured ? "default" : "secondary"}>
+                      Começar
+                    </Button>
+
+                    <ul className="space-y-3 flex-1">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2 text-sm">
+                          <span className="mt-1.5">✓</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Panel>
+                ))}
+              </div>
+            </div>
+          </Container>
         </section>
 
         {/* CTA */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-800 rounded-2xl p-12 text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Ready to get started?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Join thousands building their SaaS with our platform
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Button className="bg-white text-blue-600 hover:bg-blue-50">
-                Start Free Trial
-              </Button>
-              <Button className="border border-white text-white hover:bg-blue-700">
-                Schedule Demo
-              </Button>
-            </div>
-            <p className="text-blue-100 text-sm mt-6">
-              No credit card required. 14-day free trial.
-            </p>
-          </div>
+        <section className="py-12 sm:py-16">
+          <Container>
+            <Panel tone="portfolio" className="p-8 sm:p-12 md:p-16 text-center">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h2 className="text-4xl sm:text-5xl font-bold">
+                    Pronto para começar?
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-[92ch] mx-auto">
+                    Junte-se a milhares de empreendedores construindo seu SaaS com nossa plataforma.
+                  </p>
+                </div>
+
+                <div className="flex gap-3 justify-center flex-wrap">
+                  <Button size="lg">
+                    Iniciar teste grátis <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button size="lg" variant="secondary">
+                    Agendar demo
+                  </Button>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  Sem cartão de crédito. 14 dias de teste grátis.
+                </p>
+              </div>
+            </Panel>
+          </Container>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center text-sm text-slate-600 dark:text-slate-400">
-            <p>&copy; 2026 Micro-SaaS. All rights reserved.</p>
+      <footer className="border-t border-border/60 py-8">
+        <Container>
+          <div className="text-center text-sm text-muted-foreground">
+            <p>&copy; 2026 Micro-SaaS. Todos os direitos reservados.</p>
           </div>
-        </div>
+        </Container>
       </footer>
     </div>
   )
