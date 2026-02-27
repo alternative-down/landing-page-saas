@@ -27,7 +27,7 @@ function App() {
       <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-40">
         <Container>
           <nav className="flex items-center justify-between h-16">
-            <a href="#" className="text-lg font-semibold">
+            <a href="#" className="text-lg font-normal">
               Micro-SaaS
             </a>
             <div className="flex items-center gap-6">
@@ -60,7 +60,7 @@ function App() {
                   </div>
 
                   <div className="mt-6 space-y-6 text-center">
-                    <h1 className="text-balance text-6xl leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl">
+                    <h1 className="text-balance text-6xl leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl font-normal">
                       Construa seu
                       <span className="block text-muted-foreground">
                         SaaS mais rápido
@@ -81,7 +81,7 @@ function App() {
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
                       Build Tool
                     </p>
-                    <p className="text-3xl font-bold">Vite 7.3.1</p>
+                    <p className="text-3xl font-normal">Vite 7.3.1</p>
                     <p className="text-sm text-muted-foreground">Ultra-rápido com HMR instant</p>
                   </div>
                 </Panel>
@@ -91,7 +91,7 @@ function App() {
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
                       UI Library
                     </p>
-                    <p className="text-3xl font-bold">React 19.2</p>
+                    <p className="text-3xl font-normal">React 19.2</p>
                     <p className="text-sm text-muted-foreground">Com concurrent features</p>
                   </div>
                 </Panel>
@@ -101,7 +101,7 @@ function App() {
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
                       Type Safety
                     </p>
-                    <p className="text-3xl font-bold">TypeScript 5.9</p>
+                    <p className="text-3xl font-normal">TypeScript 5.9</p>
                     <p className="text-sm text-muted-foreground">Zero runtime type errors</p>
                   </div>
                 </Panel>
@@ -145,7 +145,7 @@ function App() {
                   { title: 'Type-Safe', desc: 'Zero erros de tipo em runtime.' }
                 ].map((item) => (
                   <Panel key={item.title} tone="portfolio" className="p-6 flex flex-col">
-                    <h3 className="font-semibold mb-2">{item.title}</h3>
+                    <h3 className="font-normal mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.desc}</p>
                   </Panel>
                 ))}
@@ -187,7 +187,7 @@ function App() {
                 ].map((tech) => (
                   <Panel key={tech.name} tone="community" className="p-6 flex flex-col">
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="font-semibold text-base">{tech.name}</h3>
+                      <h3 className="font-normal text-base">{tech.name}</h3>
                       <StatusChip status={tech.status as any} />
                     </div>
                     <p className="text-sm text-muted-foreground">{tech.desc}</p>
@@ -228,12 +228,12 @@ function App() {
                     className={`p-6 sm:p-8 flex flex-col ${plan.featured ? 'ring-2 ring-primary' : ''}`}
                   >
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="text-2xl font-semibold">{plan.name}</h3>
+                      <h3 className="text-2xl font-normal">{plan.name}</h3>
                       <StatusChip status={plan.status as any} />
                     </div>
 
                     <div className="mb-6">
-                      <span className="text-4xl font-bold">{plan.price}</span>
+                      <span className="text-4xl font-normal">{plan.price}</span>
                       {plan.price !== 'Custom' && <span className="text-muted-foreground">/mês</span>}
                     </div>
 
@@ -287,7 +287,7 @@ function App() {
                       <div className="flex items-start gap-3 flex-1">
                         <Lightbulb className="h-5 w-5 text-primary mt-1" />
                         <div className="min-w-0 flex-1">
-                          <h3 className="font-semibold">{idea.title}</h3>
+                          <h3 className="font-normal">{idea.title}</h3>
                           <p className="text-sm text-muted-foreground">{idea.votes} votes</p>
                         </div>
                       </div>
@@ -306,7 +306,7 @@ function App() {
             <Panel tone="portfolio" className="p-8 sm:p-12 md:p-16">
               <div className="space-y-6 text-center max-w-3xl mx-auto">
                 <div className="space-y-3">
-                  <h2 className="text-4xl sm:text-5xl font-bold leading-[1.1]">
+                  <h2 className="text-4xl sm:text-5xl font-normal leading-[1.1]">
                     Pronto para começar?
                   </h2>
                   <p className="text-lg text-muted-foreground">

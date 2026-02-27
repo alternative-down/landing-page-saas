@@ -68,7 +68,7 @@ export function SectionTitleKicker({ children }: { children: React.ReactNode }) 
 
 export function SectionTitleHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-3 text-balance text-2xl tracking-tight sm:text-3xl font-semibold">
+    <h2 className="mt-3 text-balance text-2xl tracking-tight sm:text-3xl font-normal">
       {children}
     </h2>
   )
