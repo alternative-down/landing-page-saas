@@ -45,54 +45,108 @@ function App() {
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-12 pb-12 sm:pt-16 sm:pb-16">
+        <section className="relative overflow-hidden pb-4 pt-2 sm:pb-6">
           <Container>
             <div className="pointer-events-none absolute inset-0 opacity-70">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.border)_1px,transparent_1px)] bg-[size:140px_140px] opacity-10" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,theme(colors.primary)/10,transparent_62%),radial-gradient(circle_at_82%_52%,theme(colors.chart-2)/8,transparent_68%)]" />
             </div>
 
-            <div className="relative space-y-8">
-              <div className="text-center space-y-6 max-w-5xl mx-auto">
-                <SplitKicker left="Produto" right="Moderno" />
-                
-                <h1 className="text-balance text-6xl sm:text-7xl lg:text-8xl font-bold leading-[0.88] tracking-tight">
-                  Construa seu<br/>
-                  <span className="text-muted-foreground">SaaS mais rápido</span>
-                </h1>
+            <div className="relative py-12 sm:py-14 lg:py-16">
+              <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+                <div className="lg:col-span-12">
+                  <div className="hidden sm:flex sm:justify-center">
+                    <SplitKicker left="Produto" right="Moderno" />
+                  </div>
 
-                <p className="mx-auto max-w-[92ch] text-pretty text-base text-muted-foreground sm:text-lg">
-                  Tudo que você precisa para lançar um produto SaaS moderno. Construído com TypeScript, React e as melhores práticas da indústria.
-                </p>
+                  <div className="mt-6 space-y-6 text-center">
+                    <h1 className="text-balance text-6xl leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl">
+                      Construa seu<br/>
+                      <span className="block text-muted-foreground">
+                        SaaS mais rápido
+                      </span>
+                    </h1>
 
-                <div className="flex gap-3 justify-center flex-wrap pt-4">
-                  <Button size="lg">
-                    Começar <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Button>
-                  <Button size="lg" variant="outline">
-                    Saber mais
-                  </Button>
+                    <p className="mx-auto max-w-[92ch] text-pretty text-base text-muted-foreground sm:text-lg">
+                      Tudo que você precisa para lançar um produto SaaS moderno. Construído com TypeScript, React e as melhores práticas da indústria.
+                    </p>
+
+                    <div className="flex gap-3 justify-center flex-wrap pt-4">
+                      <Button size="lg">
+                        Começar <ArrowUpRight className="ml-2 h-4 w-4" />
+                      </Button>
+                      <Button size="lg" variant="outline">
+                        Saber mais
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Featured showcase */}
-              <Panel tone="portfolio" className="p-8 sm:p-12">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {[
-                    { label: 'Vite', value: '7.3.1', desc: 'Build tool ultra-rápido' },
-                    { label: 'React', value: '19.2.4', desc: 'UI library moderno' },
-                    { label: 'TypeScript', value: '5.9.3', desc: 'Type safety total' }
-                  ].map((item) => (
-                    <div key={item.label} className="space-y-2 text-center">
-                      <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
-                        {item.label}
-                      </p>
-                      <p className="text-3xl font-bold">{item.value}</p>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+              <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-stretch">
+                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
+                  <div className="space-y-4 flex-1 flex flex-col">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                      Stack
+                    </p>
+                    <div className="space-y-3 flex-1">
+                      {[
+                        { label: 'Vite', value: '7.3.1' },
+                        { label: 'React', value: '19.2.4' },
+                        { label: 'TypeScript', value: '5.9.3' }
+                      ].map((item) => (
+                        <div key={item.label} className="flex items-center justify-between gap-4 pb-3 border-b border-border/40 last:border-b-0 last:pb-0">
+                          <span className="text-sm text-muted-foreground">{item.label}</span>
+                          <span className="font-semibold">{item.value}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </Panel>
+                  </div>
+                </Panel>
+
+                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
+                  <div className="space-y-4 flex-1 flex flex-col">
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                        Features
+                      </p>
+                      <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
+                        Moderno
+                      </p>
+                    </div>
+                    <div className="space-y-2 flex-1">
+                      {[
+                        'Build tool ultra-rápido',
+                        'UI library moderno',
+                        'Type safety total'
+                      ].map((feature) => (
+                        <div key={feature} className="flex items-start gap-2 text-sm">
+                          <span className="text-primary">✓</span>
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Panel>
+
+                <Panel tone="portfolio" className="p-5 sm:p-6 lg:w-1/3 flex flex-col">
+                  <div className="space-y-4 flex-1 flex flex-col">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                      Pronto
+                    </p>
+                    <div className="space-y-3 flex-1 flex flex-col justify-center">
+                      <div className="space-y-1">
+                        <p className="text-2xl font-bold">3</p>
+                        <p className="text-sm text-muted-foreground">Ferramentas principais</p>
+                      </div>
+                      <div className="pt-2 border-t border-border/40">
+                        <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground mt-2">Provenientes</p>
+                      </div>
+                    </div>
+                  </div>
+                </Panel>
+              </div>
             </div>
           </Container>
         </section>
@@ -129,7 +183,7 @@ function App() {
                       <h3 className="font-semibold mb-2 text-base">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground flex-1">
                         {feature.desc}
                       </p>
                     </Panel>
@@ -141,7 +195,7 @@ function App() {
         </section>
 
         {/* Spotlight - Tech Stack */}
-        <section className="py-6 sm:py-8">
+        <section className="pt-2 pb-6 sm:pt-3 sm:pb-8">
           <Container>
             <div className="space-y-6">
               <SectionTitle>
@@ -173,10 +227,10 @@ function App() {
                 ].map((tech) => (
                   <Panel key={tech.name} tone="community" className="p-6 flex flex-col">
                     <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="font-semibold text-base">{tech.name}</h3>
+                      <h3 className="font-semibold text-base flex-1">{tech.name}</h3>
                       <StatusChip status={tech.status as any} />
                     </div>
-                    <p className="text-sm text-muted-foreground">{tech.desc}</p>
+                    <p className="text-sm text-muted-foreground flex-1">{tech.desc}</p>
                   </Panel>
                 ))}
               </div>
