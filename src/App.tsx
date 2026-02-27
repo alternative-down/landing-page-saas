@@ -22,13 +22,13 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 
 function App() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-background">
       {/* Header */}
       <header className="border-b border-border/60 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-40">
         <Container>
           <nav className="flex items-center justify-between h-16">
             <a href="#" className="text-lg font-semibold">
-              Micro-SaaS
+              Micro-SaaS Platform
             </a>
             <div className="flex items-center gap-6">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground">
